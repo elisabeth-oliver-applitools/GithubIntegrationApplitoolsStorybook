@@ -9,13 +9,10 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: 
-              name: Install, setup and run tests
-              command: |
-               npm install
-               export APPLITOOLS_BATCH_ID=`echo $CIRCLE_SHA1`
-               export APPLITOOLS_API_KEY="hBTHfvFTfbIDIQ2u1CWaPGyY2rsdftQyHSwRMCy88Zc110"
-               npx eyes-storybook
+            - run: npm install
+            - run: export APPLITOOLS_BATCH_ID=`echo $CIRCLE_SHA1`
+            - run: export APPLITOOLS_API_KEY="hBTHfvFTfbIDIQ2u1CWaPGyY2rsdftQyHSwRMCy88Zc110"
+            - run: npx eyes-storybook
 workflows:
     build-and-test:
       jobs:

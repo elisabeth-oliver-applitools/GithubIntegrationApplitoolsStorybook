@@ -10,6 +10,7 @@ jobs:
       - node/with-cache:
           steps:
             - run: 
+              name: Install, setup and run tests
               command: |
                npm install
                export APPLITOOLS_BATCH_ID=`echo $CIRCLE_SHA1`

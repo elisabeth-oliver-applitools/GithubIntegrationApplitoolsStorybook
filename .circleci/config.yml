@@ -9,6 +9,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: sudo apt-get install -yq
             - run: npm install
             - run: npx eyes-storybook
 workflows:

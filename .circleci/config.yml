@@ -7,11 +7,10 @@ jobs:
       name: node/default
     steps:
       - checkout
-    run:
-      - npm install
-      - export APPLITOOLS_BATCH_ID=`echo $CIRCLE_SHA1`
-      - export APPLITOOLS_API_KEY=hBTHfvFTfbIDIQ2u1CWaPGyY2rsdftQyHSwRMCy88Zc110
-      - npx eyes-storybook
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npx eyes-storybook
 workflows:
     build-and-test:
       jobs:

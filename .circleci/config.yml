@@ -21,7 +21,7 @@ jobs:
            fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
       - node/with-cache:
           steps:
-            - run: export APPLITOOLS_BATCH_ID=`echo $CIRCLE_SHA1`
+            - run: export APPLITOOLS_BATCH_ID="test"
             - run: echo $APPLITOOLS_BATCH_ID
             - run: npm install
             - run: npx eyes-storybook
